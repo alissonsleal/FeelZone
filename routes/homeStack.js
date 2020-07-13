@@ -6,7 +6,7 @@ import ReviewDetails from "../screens/reviewDetails";
 
 const Stack = createStackNavigator();
 
-export const HomeStack = () => {
+export default HomeStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
