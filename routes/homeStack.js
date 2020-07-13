@@ -24,5 +24,3 @@ export const HomeStack = () => {
     </NavigationContainer>
   );
 };
-
-export default HomeStack;
