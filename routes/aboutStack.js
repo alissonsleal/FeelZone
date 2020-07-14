@@ -5,7 +5,7 @@ import About from "../screens/about";
 
 const Stack = createStackNavigator();
 
-export const AboutStack = () => {
+export default function AboutStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -13,7 +13,6 @@ export const AboutStack = () => {
         component={About}
         options={({ route }) => ({ title: route.params.title })}
       />
-      , })} />
     </Stack.Navigator>
   );
-};
+}

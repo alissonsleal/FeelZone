@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, FlatList } from "react-native";
 import { globalStyles } from "../styles/global";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function Home({ navigation }) {
+export default function Home({ route, navigation }) {
   const [review, setReview] = useState([
     { title: "Mario", rating: "5", body: "lorem ipsum", key: "1" },
     {
@@ -26,7 +26,7 @@ export default function Home({ navigation }) {
         data={review}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() => navigation.navigate("ReviewDetails", item)}
+            onPress={() => navigation.navigate("ReviewDetails")}
           >
             <Text style={globalStyles.titleText}>{item.title}</Text>
           </TouchableOpacity>

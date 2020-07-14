@@ -6,10 +6,10 @@ import ReviewDetails from "../screens/reviewDetails";
 
 const Stack = createStackNavigator();
 
-export default HomeStack = () => {
+export default function HomeStack() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator>
         <Stack.Screen
           name="Home"
           component={Home}
@@ -18,9 +18,9 @@ export default HomeStack = () => {
         <Stack.Screen
           name="ReviewDetails"
           component={ReviewDetails}
-          options={({ route }) => ({ title: route.params.title })}
+          options={{ title: "Review" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
+}
