@@ -20,13 +20,15 @@ export default function Home({ route, navigation }) {
     },
   ]);
 
+  console.log(() => navigation.navigate("ReviewDetails"));
+
   return (
     <View style={globalStyles.container}>
       <FlatList
         data={review}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() => navigation.navigate("ReviewDetails")}
+            onPress={() => navigation.navigate("ReviewDetails", item)}
           >
             <Text style={globalStyles.titleText}>{item.title}</Text>
           </TouchableOpacity>

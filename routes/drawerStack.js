@@ -1,15 +1,15 @@
-import * as React from "react";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
-import HomeStack from "./homeStack";
-import { AboutStack } from "./aboutStack";
-import Home from "../screens/home";
-import About from "../screens/about";
+import Home from "./homeStack";
+import About from "./aboutStack";
+//import Home from "../screens/home";
+//import About from "../screens/about";
 
 const Drawer = createDrawerNavigator();
 
-export default DrawerStack = () => {
+export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
@@ -18,4 +18,4 @@ export default DrawerStack = () => {
       </Drawer.Navigator>
     </NavigationContainer>
   );
-};
+}
