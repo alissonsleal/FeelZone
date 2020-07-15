@@ -9,11 +9,13 @@ export const globalStyles = StyleSheet.create({
   titleText: {
     fontFamily: "nunito-bold",
     fontSize: 18,
-    color: "#fff",
+    color: "#fffffe",
+    fontWeight: "bold",
+    letterSpacing: 1,
   },
   paragraph: {
     marginVertical: 8,
     lineHeight: 20,
-    color: "#999",
+    color: "#fffffe",
   },
 });
