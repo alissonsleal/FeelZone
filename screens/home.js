@@ -20,8 +20,6 @@ export default function Home({ route, navigation }) {
     },
   ]);
 
-  console.log(() => navigation.navigate("ReviewDetails"));
-
   return (
     <View style={globalStyles.container}>
       <FlatList

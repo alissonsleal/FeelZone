@@ -9,9 +9,14 @@ export default function ReviewDetails({ route, navigation }) {
   return (
     <View style={globalStyles.container}>
       <Text style={globalStyles.titleText}>{title}</Text>
-      <Text>{body}</Text>
-      <Text>{rating} / 5</Text>
+      <Text style={globalStyles.paragraph}>{body}</Text>
+      <Text style={styles.rating}>{rating} / 5</Text>
       <Button title="Go back" onPress={() => navigation.navigate("Home")} />
     </View>
   );
 }
+const styles = StyleSheet.create({
+  rating: {
+    color: "#AFEEDA",
+  },
+});
