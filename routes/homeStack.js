@@ -59,5 +59,7 @@ export default function homeStack() {
 const styles = StyleSheet.create({
   icon: {
     position: "absolute",
+    padding: 20,
+    color: "#fffffe",
   },
 });

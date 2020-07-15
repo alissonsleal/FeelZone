@@ -48,5 +48,7 @@ export default function aboutNavigator() {
 const styles = StyleSheet.create({
   icon: {
     position: "absolute",
+    padding: 20,
+    color: "#fffffe",
   },
 });

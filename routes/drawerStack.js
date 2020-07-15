@@ -10,7 +10,12 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Navigator
+        initialRouteName="Home"
+        drawerType={"back"}
+        edgeWidth={75}
+        drawerStyle={{ backgroundColor: "#fffffe" }}
+      >
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="About" component={About} />
       </Drawer.Navigator>

@@ -1,8 +1,5 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
-import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
 
 export default Header = ({ title }) => {
   return (
