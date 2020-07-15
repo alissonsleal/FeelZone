@@ -1,11 +1,16 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Button } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+import { StyleSheet } from "react-native";
 import Home from "../screens/home";
 import ReviewDetails from "../screens/reviewDetails";
 import Header from "../shared/header";
 
 const Stack = createStackNavigator();
+
+const openMenu = () => {
+  navigation.toggleDrawer();
+};
 
 export default function homeStack() {
   return (
@@ -25,24 +30,34 @@ export default function homeStack() {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={{
-          headerTitleAlign: "center",
-          headerTitle: (props) => <Header {...props} />,
-          headerLeft: () => {
-            <Button
-              onPress={() => alert("Button Pressed")}
-              title="Info"
-              color="#FFF"
-            />;
-          },
-          title: "Home",
-        }}
+        options={({ navigation, routes }) => ({
+          headerLeft: () => (
+            <MaterialIcons
+              name="menu"
+              size={30}
+              navigation={{ navigation }}
+              onPress={navigation.openDrawer}
+              style={styles.icon}
+            />
+          ),
+          headerTitle: () => (
+            <Header navigation={navigation} title="Gamezone" />
+          ),
+        })}
       />
       <Stack.Screen
         name="ReviewDetails"
         component={ReviewDetails}
-        options={{ title: "Details" }}
+        options={(navigation) => ({
+          headerTitle: () => <Header navigation={navigation} title="Details" />,
+        })}
       />
     </Stack.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  icon: {
+    position: "absolute",
+  },
+});
