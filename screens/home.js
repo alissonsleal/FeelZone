@@ -1,7 +1,15 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, FlatList } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+  ImageBackground,
+  Modal,
+} from "react-native";
 import { globalStyles } from "../styles/global";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { MaterialIcons } from "@expo/vector-icons";
 import Card from "../shared/card";
 
 export default function Home({ route, navigation }) {
@@ -21,6 +29,8 @@ export default function Home({ route, navigation }) {
     },
   ]);
 
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <View style={globalStyles.container}>
       <FlatList
@@ -35,6 +45,35 @@ export default function Home({ route, navigation }) {
           </TouchableOpacity>
         )}
       />
+      <Modal
+        visible={modalOpen}
+        animationType="slide"
+        onRequestClose={() => setModalOpen(false)}
+      >
+        <MaterialIcons
+          name="close"
+          size={24}
+          onPress={() => setModalOpen(false)}
+          style={styles.modalClose}
+        />
+        <Text>THIS IS A MODEL</Text>
+      </Modal>
+
+      <MaterialIcons
+        name="add"
+        size={24}
+        onPress={() => setModalOpen(true)}
+        style={styles.modalToggle}
+      />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  modalToggle: {
+    color: globalStyles.light.color,
+  },
+  modalClose: {
+    color: globalStyles.dark.color,
+  },
+});

@@ -6,9 +6,9 @@ export default function About({ navigation }) {
   return (
     <View style={globalStyles.container}>
       <Button
-        title="fuc go bac"
+        title="Go Back"
         onPress={() => navigation.navigate("Home")}
-        color="#2cb67d"
+        color={globalStyles.green.color}
       />
     </View>
   );

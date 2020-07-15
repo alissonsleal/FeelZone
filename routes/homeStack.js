@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { MaterialIcons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
+import { globalStyles } from "../styles/global";
 import Home from "../screens/home";
 import ReviewDetails from "../screens/reviewDetails";
 import Header from "../shared/header";
@@ -41,7 +42,7 @@ export default function homeStack() {
             />
           ),
           headerTitle: () => (
-            <Header navigation={navigation} title="Gamezone" />
+            <Header navigation={navigation} title="GameZone" />
           ),
         })}
       />
@@ -60,6 +61,6 @@ const styles = StyleSheet.create({
   icon: {
     position: "absolute",
     padding: 20,
-    color: "#fffffe",
+    color: globalStyles.light.color,
   },
 });

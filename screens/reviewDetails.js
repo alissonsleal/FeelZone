@@ -11,7 +11,9 @@ export default function ReviewDetails({ route, navigation }) {
       <Card>
         <Text style={globalStyles.titleText}>{title}</Text>
         <Text style={globalStyles.paragraph}>{body}</Text>
-        <Text style={styles.rating}>{rating} / 5</Text>
+        <View>
+          <Text style={styles.ratingText}>Rating: {rating} / 5</Text>
+        </View>
         <Button
           title="Go back"
           onPress={() => navigation.navigate("Home")}
@@ -23,8 +25,10 @@ export default function ReviewDetails({ route, navigation }) {
   );
 }
 const styles = StyleSheet.create({
-  rating: {
-    color: "#2cb67d",
-    paddingBottom: 20,
+  ratingText: {
+    color: globalStyles.light.color,
+    paddingVertical: 20,
+    fontSize: 16,
+    letterSpacing: 1,
   },
 });

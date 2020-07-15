@@ -18,4 +18,20 @@ export const globalStyles = StyleSheet.create({
     lineHeight: 20,
     color: "#fffffe",
   },
+  purple: {
+    color: "#7f5af0",
+    backgroundColor: "#7f5af0",
+  },
+  dark: {
+    color: "#16161a",
+    backgroundColor: "#16161a",
+  },
+  light: {
+    color: "#fffffe",
+    backgroundColor: "#fffffe",
+  },
+  green: {
+    color: "#2cb67d",
+    backgroundColor: "#2cb67d",
+  },
 });
