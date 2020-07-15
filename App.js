@@ -3,6 +3,8 @@ import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import Navigator from "./routes/drawerStack";
 
+//https://www.happyhues.co/palettes/4
+
 const getFonts = () =>
   Font.loadAsync({
     "nunito-regular": require("./assets/fonts/Nunito-Regular.ttf"),
