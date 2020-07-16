@@ -27,7 +27,14 @@ export default ReviewForm = ({ addReview }) => {
           addReview(values);
         }}
       >
-        {({ handleSubmit, handleChange, values }) => (
+        {({
+          handleSubmit,
+          handleChange,
+          values,
+          touched,
+          errors,
+          handleBlur,
+        }) => (
           <Card>
             <View>
               <TextInput
@@ -38,7 +45,11 @@ export default ReviewForm = ({ addReview }) => {
                 underlineColorAndroid={globalStyles.light.color}
                 fontSize={16}
                 padding={10}
+                onBlur={handleBlur("title")}
               />
+              <Text style={styles.errorText}>
+                {touched.title && errors.title}
+              </Text>
               <TextInput
                 multiline
                 style={styles.modalContentText}
@@ -48,7 +59,12 @@ export default ReviewForm = ({ addReview }) => {
                 underlineColorAndroid={globalStyles.light.color}
                 padding={10}
                 fontSize={16}
+                onBlur={handleBlur("body")}
               />
+              <Text style={styles.errorText}>
+                {touched.body && errors.body}
+              </Text>
+
               <TextInput
                 style={styles.modalContentText}
                 placeholder="Rating (1 - 5)"
@@ -58,12 +74,18 @@ export default ReviewForm = ({ addReview }) => {
                 underlineColorAndroid={globalStyles.light.color}
                 padding={10}
                 fontSize={16}
+                onBlur={handleBlur("rating")}
               />
-              <Button
-                title="Submit"
-                color={globalStyles.green.color}
-                onPress={handleSubmit}
-              />
+              <Text style={styles.errorText}>
+                {touched.rating && errors.rating}
+              </Text>
+              <View style={styles.paddingButton}>
+                <Button
+                  title="Submit"
+                  color={globalStyles.green.color}
+                  onPress={handleSubmit}
+                />
+              </View>
             </View>
           </Card>
         )}
@@ -75,5 +97,12 @@ export default ReviewForm = ({ addReview }) => {
 const styles = StyleSheet.create({
   modalContentText: {
     color: "#FFF",
+  },
+  errorText: {
+    color: globalStyles.green.color,
+    paddingHorizontal: 5,
+  },
+  paddingButton: {
+    paddingTop: 20,
   },
 });
