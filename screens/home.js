@@ -7,6 +7,8 @@ import {
   Modal,
   TextInput,
   Button,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
 import { Formik } from "formik";
 import { globalStyles } from "../styles/global";
@@ -14,9 +16,10 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { MaterialIcons } from "@expo/vector-icons";
 import Card from "../shared/card";
 import ReviewForm from "./reviewForm";
+import { add } from "react-native-reanimated";
 
 export default function Home({ route, navigation }) {
-  const [review, setReview] = useState([
+  const [reviews, setReview] = useState([
     { title: "Mario", rating: "5", body: "lorem ipsum", key: "1" },
     {
       title: "Gotta catch Them All(again)",
@@ -34,18 +37,35 @@ export default function Home({ route, navigation }) {
 
   const [modalOpen, setModalOpen] = useState(false);
 
+  const addReview = (review) => {
+    let randomKey =
+      review.title +
+      Math.random().toString(36).substring(2, 15) +
+      Math.random().toString(36).substring(2, 15);
+
+    review.key = randomKey;
+    //review.key = Math.random.toString();
+    setReview((currentReviews) => {
+      return [review, ...currentReviews];
+    });
+    setModalOpen(false);
+    console.log(reviews);
+  };
+
   return (
     <View style={globalStyles.container}>
       <Modal visible={modalOpen} animationType="slide">
-        <View style={styles.modalContent}>
-          <MaterialIcons
-            name="close"
-            size={24}
-            onPress={() => setModalOpen(false)}
-            style={{ ...styles.modalToggle, ...styles.modalClose }}
-          />
-          <ReviewForm />
-        </View>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.modalContent}>
+            <MaterialIcons
+              name="close"
+              size={24}
+              onPress={() => setModalOpen(false)}
+              style={{ ...styles.modalToggle, ...styles.modalClose }}
+            />
+            <ReviewForm addReview={addReview} reviews={reviews} />
+          </View>
+        </TouchableWithoutFeedback>
       </Modal>
 
       <MaterialIcons
@@ -55,7 +75,7 @@ export default function Home({ route, navigation }) {
         style={styles.modalToggle}
       />
       <FlatList
-        data={review}
+        data={reviews}
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => navigation.navigate("ReviewDetails", item)}

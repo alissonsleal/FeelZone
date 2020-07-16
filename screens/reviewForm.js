@@ -3,15 +3,16 @@ import { StyleSheet, View, Text, TextInput, Button } from "react-native";
 import { globalStyles } from "../styles/global";
 import { Formik } from "formik";
 import Card from "../shared/card";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default ReviewForm = (props) => {
+export default ReviewForm = ({ addReview }) => {
   return (
     <View styles={globalStyles.container}>
       <Formik
         initialValues={{ title: "", body: "", rating: "" }}
-        onSubmit={(values) => {
-          console.log(values);
+        onSubmit={(values, actions) => {
+          actions.resetForm();
+          addReview(values);
+          //console.log(reviews);
         }}
       >
         {({ handleSubmit, handleChange, values }) => (
