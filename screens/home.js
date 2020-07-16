@@ -44,12 +44,10 @@ export default function Home({ route, navigation }) {
       Math.random().toString(36).substring(2, 15);
 
     review.key = randomKey;
-    //review.key = Math.random.toString();
     setReview((currentReviews) => {
       return [review, ...currentReviews];
     });
     setModalOpen(false);
-    console.log(reviews);
   };
 
   return (

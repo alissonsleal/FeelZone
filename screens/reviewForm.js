@@ -25,7 +25,6 @@ export default ReviewForm = ({ addReview }) => {
         onSubmit={(values, actions) => {
           actions.resetForm();
           addReview(values);
-          //console.log(reviews);
         }}
       >
         {({ handleSubmit, handleChange, values }) => (
