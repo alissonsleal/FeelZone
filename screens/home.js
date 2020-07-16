@@ -4,14 +4,16 @@ import {
   View,
   Text,
   FlatList,
-  ImageBackground,
   Modal,
+  TextInput,
+  Button,
 } from "react-native";
+import { Formik } from "formik";
 import { globalStyles } from "../styles/global";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { MaterialIcons } from "@expo/vector-icons";
 import Card from "../shared/card";
-import { color } from "react-native-reanimated";
+import ReviewForm from "./reviewForm";
 
 export default function Home({ route, navigation }) {
   const [review, setReview] = useState([
@@ -28,45 +30,6 @@ export default function Home({ route, navigation }) {
       body: "lorem ipsum",
       key: "3",
     },
-    { title: "Mario", rating: "5", body: "lorem ipsum", key: "4" },
-    {
-      title: "Gotta catch Them All(again)",
-      rating: "4",
-      body: "lorem ipsum",
-      key: "5",
-    },
-    {
-      title: 'Not So "Final" Fantasy',
-      rating: "3",
-      body: "lorem ipsum",
-      key: "6",
-    },
-    { title: "Mario", rating: "5", body: "lorem ipsum", key: "7" },
-    {
-      title: "Gotta catch Them All(again)",
-      rating: "4",
-      body: "lorem ipsum",
-      key: "8",
-    },
-    {
-      title: 'Not So "Final" Fantasy',
-      rating: "3",
-      body: "lorem ipsum",
-      key: "9",
-    },
-    { title: "Mario", rating: "5", body: "lorem ipsum", key: "10" },
-    {
-      title: "Gotta catch Them All(again)",
-      rating: "4",
-      body: "lorem ipsum",
-      key: "11",
-    },
-    {
-      title: 'Not So "Final" Fantasy',
-      rating: "3",
-      body: "lorem ipsum",
-      key: "12",
-    },
   ]);
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -81,9 +44,7 @@ export default function Home({ route, navigation }) {
             onPress={() => setModalOpen(false)}
             style={{ ...styles.modalToggle, ...styles.modalClose }}
           />
-          <Card>
-            <Text style={styles.modalContentText}>THIS IS A MODEL</Text>
-          </Card>
+          <ReviewForm />
         </View>
       </Modal>
 
