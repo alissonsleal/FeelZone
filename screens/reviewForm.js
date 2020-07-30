@@ -1,3 +1,4 @@
+import axios from "../services/api";
 import React from "react";
 import { StyleSheet, View, Text, TextInput, Button } from "react-native";
 import { globalStyles } from "../styles/global";

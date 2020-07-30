@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -10,6 +10,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import api from "../services/api";
 import { Formik } from "formik";
 import { globalStyles } from "../styles/global";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -18,8 +19,8 @@ import Card from "../shared/card";
 import ReviewForm from "./reviewForm";
 import { add } from "react-native-reanimated";
 
-export default function Home({ route, navigation }) {
-  const [reviews, setReview] = useState([
+/*
+[
     { title: "Mario", rating: "5", body: "lorem ipsum", key: "1" },
     {
       title: "Gotta catch Them All(again)",
@@ -33,9 +34,22 @@ export default function Home({ route, navigation }) {
       body: "lorem ipsum",
       key: "3",
     },
-  ]);
+  ]
+*/
 
+export default function Home({ route, navigation }) {
+  const [reviews, setReview] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    async function loadContent() {
+      const response = await api.get("/texts");
+      const { docs } = response.data;
+      console.log(docs);
+      setReview(docs);
+    }
+    loadContent();
+  }, []);
 
   const addReview = (review) => {
     let randomKey =
@@ -74,6 +88,7 @@ export default function Home({ route, navigation }) {
       />
       <FlatList
         data={reviews}
+        keyExtractor={(item) => item._id}
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => navigation.navigate("ReviewDetails", item)}
