@@ -3,8 +3,7 @@ import { StyleSheet } from "react-native";
 export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    paddingBottom: 0,
+    padding: 0,
     backgroundColor: "#16161a",
   },
   titleText: {
@@ -13,11 +12,13 @@ export const globalStyles = StyleSheet.create({
     color: "#fffffe",
     fontWeight: "bold",
     letterSpacing: 1,
+    textAlign: "justify",
   },
   paragraph: {
     marginVertical: 8,
     lineHeight: 20,
     color: "#fffffe",
+    textAlign: "justify",
   },
   purple: {
     color: "#7f5af0",

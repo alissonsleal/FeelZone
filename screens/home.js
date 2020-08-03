@@ -15,7 +15,6 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { MaterialIcons } from "@expo/vector-icons";
 import Card from "../shared/card";
 import ReviewForm from "./reviewForm";
-import Constants from "expo-constants";
 
 const wait = (timeout) => {
   return new Promise((resolve) => {
@@ -79,19 +78,12 @@ export default function Home({ route, navigation }) {
               name="close"
               size={24}
               onPress={() => setModalOpen(false)}
-              style={{ ...styles.modalToggle, ...styles.modalClose }}
+              style={styles.modalClose}
             />
             <ReviewForm addReview={addReview} reviews={reviews} />
           </View>
         </TouchableWithoutFeedback>
       </Modal>
-
-      <MaterialIcons
-        name="add"
-        size={30}
-        onPress={() => setModalOpen(true)}
-        style={styles.modalToggle}
-      />
 
       <FlatList
         data={reviews}
@@ -109,11 +101,17 @@ export default function Home({ route, navigation }) {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={onRefresh}
-            progressViewOffset={-50}
+            progressViewOffset={0}
             colors={[globalStyles.purple.color, globalStyles.green.color]}
             progressBackgroundColor={globalStyles.light.color}
           />
         }
+      />
+      <MaterialIcons
+        name="add"
+        size={30}
+        onPress={() => setModalOpen(true)}
+        style={styles.modalToggle}
       />
     </View>
   );
@@ -122,17 +120,18 @@ export default function Home({ route, navigation }) {
 const styles = StyleSheet.create({
   modalToggle: {
     color: globalStyles.light.color,
-    marginBottom: 10,
-    padding: 10,
+    bottom: 20,
+    right: 35,
+    padding: 20,
     borderRadius: 35,
-    flex: 0,
     alignSelf: "center",
+    position: "absolute",
 
-    backgroundColor: globalStyles.purple.color,
+    backgroundColor: globalStyles.green.color,
   },
   modalHeader: {
     flex: 1,
-    backgroundColor: "#FFF",
+    backgroundColor: globalStyles.light.color,
   },
   modalContent: {
     flex: 1,
@@ -143,6 +142,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   modalClose: {
+    color: globalStyles.light.color,
+    marginBottom: 10,
+    padding: 10,
+    borderRadius: 35,
+    //flex: 1,
+    alignSelf: "center",
+    //position: "absolute",
+
+    backgroundColor: globalStyles.purple.color,
     marginTop: 16,
   },
 });
