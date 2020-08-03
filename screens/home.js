@@ -5,37 +5,15 @@ import {
   Text,
   FlatList,
   Modal,
-  TextInput,
-  Button,
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
 import api from "../services/api";
-import { Formik } from "formik";
 import { globalStyles } from "../styles/global";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { MaterialIcons } from "@expo/vector-icons";
 import Card from "../shared/card";
 import ReviewForm from "./reviewForm";
-import { add } from "react-native-reanimated";
-
-/*
-[
-    { title: "Mario", rating: "5", body: "lorem ipsum", key: "1" },
-    {
-      title: "Gotta catch Them All(again)",
-      rating: "4",
-      body: "lorem ipsum",
-      key: "2",
-    },
-    {
-      title: 'Not So "Final" Fantasy',
-      rating: "3",
-      body: "lorem ipsum",
-      key: "3",
-    },
-  ]
-*/
 
 export default function Home({ route, navigation }) {
   const [reviews, setReview] = useState([]);
@@ -53,10 +31,17 @@ export default function Home({ route, navigation }) {
 
   async function addReview(review) {
     let response = await api.post("/texts", review);
+    let randomKey =
+      review.title +
+      Math.random().toString(36).substring(2, 15) +
+      Math.random().toString(36).substring(2, 15);
+
+    review._id = randomKey;
     setReview((currentReviews) => {
-      return [review, ...currentReviews], api.post("/texts", { review });
+      return [review, ...currentReviews];
     });
     setModalOpen(false);
+    //loadContent();
     console.log(response.data);
   }
 
@@ -74,23 +59,6 @@ export default function Home({ route, navigation }) {
     setModalOpen(false);
 
     */
-
-  // ******************************************************
-  /* I might be getting close to make this work...
-    
-    useEffect(() => {
-      https://github.com/axios/axios
-      async function addContent() {
-        const response = await api.post("/texts", { title: testNum });
-        //const { docs } = response.data;
-        //console.log(docs);
-        //setReview(docs);
-      }
-      //addContent();
-    }, []);
-    
-  };
-  */
 
   return (
     <View style={globalStyles.container}>
