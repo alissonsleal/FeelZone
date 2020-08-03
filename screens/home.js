@@ -51,6 +51,16 @@ export default function Home({ route, navigation }) {
     loadContent();
   }, []);
 
+  async function addReview(review) {
+    let response = await api.post("/texts", review);
+    setReview((currentReviews) => {
+      return [review, ...currentReviews], api.post("/texts", { review });
+    });
+    setModalOpen(false);
+    console.log(response.data);
+  }
+
+  /* ******************************************************
   const addReview = (review) => {
     let randomKey =
       review.title +
@@ -59,11 +69,14 @@ export default function Home({ route, navigation }) {
 
     review.key = randomKey;
     setReview((currentReviews) => {
-      return [review, ...currentReviews];
+      return [review, ...currentReviews], api.post("/texts", { review });
     });
     setModalOpen(false);
 
-    /* I might be getting close to make this work...
+    */
+
+  // ******************************************************
+  /* I might be getting close to make this work...
     
     useEffect(() => {
       https://github.com/axios/axios
@@ -75,8 +88,9 @@ export default function Home({ route, navigation }) {
       }
       //addContent();
     }, []);
-    */
+    
   };
+  */
 
   return (
     <View style={globalStyles.container}>
