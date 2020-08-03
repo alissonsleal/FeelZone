@@ -45,21 +45,6 @@ export default function Home({ route, navigation }) {
     console.log(response.data);
   }
 
-  /* ******************************************************
-  const addReview = (review) => {
-    let randomKey =
-      review.title +
-      Math.random().toString(36).substring(2, 15) +
-      Math.random().toString(36).substring(2, 15);
-
-    review.key = randomKey;
-    setReview((currentReviews) => {
-      return [review, ...currentReviews], api.post("/texts", { review });
-    });
-    setModalOpen(false);
-
-    */
-
   return (
     <View style={globalStyles.container}>
       <Modal visible={modalOpen} animationType="slide">
