@@ -62,6 +62,20 @@ export default function Home({ route, navigation }) {
       return [review, ...currentReviews];
     });
     setModalOpen(false);
+
+    /* I might be getting close to make this work...
+    
+    useEffect(() => {
+      https://github.com/axios/axios
+      async function addContent() {
+        const response = await api.post("/texts", { title: testNum });
+        //const { docs } = response.data;
+        //console.log(docs);
+        //setReview(docs);
+      }
+      //addContent();
+    }, []);
+    */
   };
 
   return (
