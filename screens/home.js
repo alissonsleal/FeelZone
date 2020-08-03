@@ -15,6 +15,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { MaterialIcons } from "@expo/vector-icons";
 import Card from "../shared/card";
 import ReviewForm from "./reviewForm";
+import Constants from "expo-constants";
 
 const wait = (timeout) => {
   return new Promise((resolve) => {
@@ -105,7 +106,12 @@ export default function Home({ route, navigation }) {
           </TouchableOpacity>
         )}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            progressViewOffset={-50}
+            progressBackgroundColor={globalStyles.light.color}
+          />
         }
       />
     </View>
