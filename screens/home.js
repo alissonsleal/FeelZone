@@ -33,6 +33,7 @@ export default function Home({ route, navigation }) {
       console.log(docs);
       setReview(docs);
     }
+
     loadContent();
   }, []);
 
@@ -48,7 +49,6 @@ export default function Home({ route, navigation }) {
       return [review, ...currentReviews];
     });
     setModalOpen(false);
-    //loadContent();
     console.log(response.data);
   }
 
@@ -58,7 +58,15 @@ export default function Home({ route, navigation }) {
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
 
-    wait(2000).then(() => setRefreshing(false));
+    wait(1000).then(() => setRefreshing(false));
+
+    async function loadContent() {
+      const response = await api.get("/texts");
+      const { docs } = response.data;
+      console.log(docs);
+      setReview(docs);
+    }
+    loadContent();
   }, []);
 
   return (
@@ -83,6 +91,7 @@ export default function Home({ route, navigation }) {
         onPress={() => setModalOpen(true)}
         style={styles.modalToggle}
       />
+
       <FlatList
         data={reviews}
         keyExtractor={(item) => item._id}
