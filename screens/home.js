@@ -110,6 +110,7 @@ export default function Home({ route, navigation }) {
             refreshing={refreshing}
             onRefresh={onRefresh}
             progressViewOffset={-50}
+            colors={[globalStyles.purple.color, globalStyles.green.color]}
             progressBackgroundColor={globalStyles.light.color}
           />
         }
