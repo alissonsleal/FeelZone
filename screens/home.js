@@ -7,6 +7,7 @@ import {
   Modal,
   TouchableWithoutFeedback,
   Keyboard,
+  RefreshControl,
 } from "react-native";
 import api from "../services/api";
 import { globalStyles } from "../styles/global";
@@ -14,6 +15,12 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { MaterialIcons } from "@expo/vector-icons";
 import Card from "../shared/card";
 import ReviewForm from "./reviewForm";
+
+const wait = (timeout) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, timeout);
+  });
+};
 
 export default function Home({ route, navigation }) {
   const [reviews, setReview] = useState([]);
@@ -44,6 +51,15 @@ export default function Home({ route, navigation }) {
     //loadContent();
     console.log(response.data);
   }
+
+  //refreshing doesn't work properly
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
 
   return (
     <View style={globalStyles.container}>
@@ -79,6 +95,9 @@ export default function Home({ route, navigation }) {
             </Card>
           </TouchableOpacity>
         )}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
       />
     </View>
   );
