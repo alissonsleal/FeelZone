@@ -47,6 +47,7 @@ export default ReviewForm = ({ addReview }) => {
                 fontSize={16}
                 padding={10}
                 onBlur={handleBlur("title")}
+                placeholderTextColor="#ccc"
               />
               <Text style={styles.errorText}>
                 {touched.title && errors.title}
@@ -61,6 +62,7 @@ export default ReviewForm = ({ addReview }) => {
                 padding={10}
                 fontSize={16}
                 onBlur={handleBlur("body")}
+                placeholderTextColor="#ccc"
               />
               <Text style={styles.errorText}>
                 {touched.body && errors.body}
@@ -76,6 +78,7 @@ export default ReviewForm = ({ addReview }) => {
                 padding={10}
                 fontSize={16}
                 onBlur={handleBlur("rating")}
+                placeholderTextColor="#ccc"
               />
               <Text style={styles.errorText}>
                 {touched.rating && errors.rating}

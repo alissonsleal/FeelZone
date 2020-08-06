@@ -8,6 +8,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   RefreshControl,
+  StatusBar,
 } from "react-native";
 import api from "../services/api";
 import { globalStyles } from "../styles/global";
@@ -71,6 +72,11 @@ export default function Home({ route, navigation }) {
 
   return (
     <View style={globalStyles.container}>
+      <StatusBar
+        barStyle="light-content"
+        hidden={false}
+        backgroundColor="#7f5af0"
+      />
       <Modal visible={modalOpen} animationType="slide">
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.modalContent}>
@@ -126,8 +132,8 @@ const styles = StyleSheet.create({
     borderRadius: 35,
     alignSelf: "center",
     position: "absolute",
-
     backgroundColor: globalStyles.green.color,
+    elevation: 4,
   },
   modalHeader: {
     flex: 1,
@@ -146,10 +152,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     padding: 10,
     borderRadius: 35,
-    //flex: 1,
     alignSelf: "center",
-    //position: "absolute",
-
     backgroundColor: globalStyles.purple.color,
     marginTop: 16,
   },
