@@ -6,7 +6,6 @@ import {
   Text,
   TextInput,
   Button,
-  ScrollView,
   KeyboardAvoidingView,
 } from "react-native";
 import { globalStyles } from "../styles/global";
@@ -75,7 +74,7 @@ export default ReviewForm = ({ addReview }) => {
                 fontSize={16}
                 onBlur={handleBlur("body")}
                 placeholderTextColor="#ccc"
-                //maxLength={800}
+                maxLength={40000}
               />
               <Text style={styles.errorText}>
                 {touched.body && errors.body}
