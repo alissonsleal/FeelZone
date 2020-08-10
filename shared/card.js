@@ -1,11 +1,14 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import { ScrollView } from "react-native";
 
 export default Card = (props) => {
   return (
-    <View style={styles.card}>
-      <View style={styles.cardContent}>{props.children}</View>
-    </View>
+    <ScrollView>
+      <View style={styles.card}>
+        <View style={styles.cardContent}>{props.children}</View>
+      </View>
+    </ScrollView>
   );
 };
 
