@@ -1,4 +1,3 @@
-import axios from "../services/api";
 import React from "react";
 import {
   StyleSheet,
