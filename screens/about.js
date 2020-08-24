@@ -1,6 +1,8 @@
 import React from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text, Button, Image } from "react-native";
 import { globalStyles } from "../styles/global";
+
+import splash from "../assets/splash.png";
 
 export default function About({ navigation }) {
   return (
@@ -24,6 +26,7 @@ export default function About({ navigation }) {
         onPress={() => navigation.navigate("Home")}
         color={globalStyles.green.color}
       />
+      <Image source={splash} style={styles.splashImg} />
     </View>
   );
 }
@@ -37,5 +40,12 @@ styles = StyleSheet.create({
     paddingTop: 10,
     paddingHorizontal: 20,
     fontSize: 16,
+  },
+  splashImg: {
+    height: 250,
+    width: 250,
+    resizeMode: "contain",
+    alignSelf: "center",
+    marginTop: 5,
   },
 });
