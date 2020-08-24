@@ -37,7 +37,7 @@ export default function aboutNavigator() {
             />
           ),
           headerTitle: () => (
-            <Header navigation={navigation} title="About GameZone" />
+            <Header navigation={navigation} title="About FeelZone" />
           ),
         })}
       />

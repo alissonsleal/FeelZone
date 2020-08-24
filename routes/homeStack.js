@@ -42,7 +42,7 @@ export default function homeStack() {
             />
           ),
           headerTitle: () => (
-            <Header navigation={navigation} title="GameZone" />
+            <Header navigation={navigation} title="FeelZone" />
           ),
         })}
       />
