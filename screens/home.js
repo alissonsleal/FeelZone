@@ -53,6 +53,7 @@ export default function Home({ route, navigation }) {
     console.log(response.data);
   }
 
+  //refreshing doesn't work properly
   const [refreshing, setRefreshing] = React.useState(false);
 
   const onRefresh = React.useCallback(() => {
