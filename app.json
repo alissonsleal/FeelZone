@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "gamezone",
-    "slug": "gamezone",
+    "name": "FeelZone",
+    "slug": "Share your Feelings Anonymously",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,7 +18,7 @@
       "supportsTablet": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     }
   }
 }

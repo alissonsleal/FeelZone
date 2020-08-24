@@ -1,2 +1,3 @@
-# gamezone
-App that you can send a public anonymous message to everyone (kinda like reddit actually)
+# FeelZone: Share your Feelings Anonymously
+
+An app that you can share your feelings anonymously for everyone to read.
