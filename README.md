@@ -46,37 +46,37 @@ To open the expo server, just run:
 The first thing you'll see is the loading page:
 
 <p align="center">
-<img src="./assets/Screenshots/LoadingPage.png" alt="Loading Page" >
+<img src="./assets/Screenshots/LoadingPage.png" alt="Loading Page" width="256px">
 </p>
 
 You can just lurk and read other people's stories from the homepage. If you want to share your story, just click the green button on the bottom right corner of the app.
 
 <p align="center">
-<img src="./assets/Screenshots/homepage.png" alt="HomeScreen" >
+<img src="./assets/Screenshots/homepage.png" alt="HomeScreen" width="256px">
 </p>
 
 After this, you just have to add a title and a description and then just click the submit button.
 
 <p align="center">
-<img src="./assets/Screenshots/CreateReviewPage_Written.png" alt="CreateReviewPage" >
+<img src="./assets/Screenshots/CreateReviewPage_Written.png" alt="CreateReviewPage" width="256px">
 </p>
 
 After this, you'll be able to see your story in the homepage, if you click it, you'll be able to see the details.
 
 <p align="center">
-<img src="./assets/Screenshots/DetailsPage.png" alt="Details Page" >
+<img src="./assets/Screenshots/DetailsPage.png" alt="Details Page" width="256px">
 </p>
 
 If you swipe left or click on the hamburger menu button, you'll be able to see the about page:
 
 <p align="center">
-<img src="./assets/Screenshots/HamburgerMenu.png" alt="Hamburger Menu" >
+<img src="./assets/Screenshots/HamburgerMenu.png" alt="Hamburger Menu" width="256px">
 </p>
 
 If you open About, you'll be redirected to the about page:
 
 <p align="center">
-<img src="./assets/Screenshots/AboutPage.png" alt="AboutPage" >
+<img src="./assets/Screenshots/AboutPage.png" alt="AboutPage" width="256px">
 </p>
 
 [Back To The Top](#Description)
