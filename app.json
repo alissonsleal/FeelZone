@@ -14,11 +14,17 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.appali.feelzone",
+      "versionCode": 1
+    },
     "ios": {
       "supportsTablet": true
     },
     "web": {
       "favicon": "./assets/icon.png"
-    }
+    },
+    "description": "Vent your frustrations here.\nAll submissions are anonymous and get deleted everyday at midnight.\nShare your long-standing baggage, happy thoughts or recent trauma, posting here may provide some relief.\nOr you can just lurk here, and hear other people's stories. Either way, you are always welcome here.",
+    "githubUrl": "https://github.com/Alissonsleal/FeelZone/tree/master"
   }
 }
