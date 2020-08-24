@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "FeelZone",
-    "slug": "Share your Feelings Anonymously",
+    "slug": "FeelZone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
