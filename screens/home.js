@@ -9,10 +9,10 @@ import {
   Keyboard,
   RefreshControl,
   StatusBar,
+  TouchableOpacity,
 } from "react-native";
 import api from "../services/api";
 import { globalStyles } from "../styles/global";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { MaterialIcons } from "@expo/vector-icons";
 import Card from "../shared/card";
 import ReviewForm from "./reviewForm";
