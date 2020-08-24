@@ -52,13 +52,13 @@ The first thing you'll see is the loading page:
 You can just lurk and read other people's stories from the homepage. If you want to share your story, just click the green button on the bottom right corner of the app.
 
 <p align="center">
-<img src="./assets/Screenshots/homepage.png" alt="HomeScreen" width="256px">
+<img src="./assets/Screenshots/HomePage.png" alt="Home Page" width="256px">
 </p>
 
 After this, you just have to add a title and a description and then just click the submit button.
 
 <p align="center">
-<img src="./assets/Screenshots/CreateReviewPage_Written.png" alt="CreateReviewPage" width="256px">
+<img src="./assets/Screenshots/CreateReviewPage_Written.png" alt="Create Review Page" width="256px">
 </p>
 
 After this, you'll be able to see your story in the homepage, if you click it, you'll be able to see the details.
@@ -76,7 +76,7 @@ If you swipe left or click on the hamburger menu button, you'll be able to see t
 If you open About, you'll be redirected to the about page:
 
 <p align="center">
-<img src="./assets/Screenshots/AboutPage.png" alt="AboutPage" width="256px">
+<img src="./assets/Screenshots/AboutPage.png" alt="About Page" width="256px">
 </p>
 
 [Back To The Top](#Description)
