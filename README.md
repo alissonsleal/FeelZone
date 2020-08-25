@@ -16,6 +16,8 @@
 
 Vent your frustrations here. All submissions are anonymous and get deleted everyday at midnight. Share your long-standing baggage, happy thoughts or recent trauma, posting here may provide some relief. Or you can just lurk here, and hear other people's stories. Either way, you are always welcome here.
 
+Available only at [Amazon App Store](https://www.amazon.com.br/dp/B08GL4NNXW/)
+
 [Back To The Top](#Description)
 
 #### Tecnologies
