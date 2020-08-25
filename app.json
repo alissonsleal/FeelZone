@@ -16,7 +16,8 @@
     "assetBundlePatterns": ["**/*"],
     "android": {
       "package": "com.appali.feelzone",
-      "versionCode": 1
+      "versionCode": 1,
+      "enableDangerousExperimentalLeanBuilds": true
     },
     "ios": {
       "supportsTablet": true
