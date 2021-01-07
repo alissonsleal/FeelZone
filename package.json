@@ -27,7 +27,7 @@
     "react-native-screens": "~2.9.0",
     "react-native-vector-icons": "^7.0.0",
     "react-native-web": "~0.11.7",
-    "realm": "^10.0.0-beta.6",
+    "realm": "^10.1.2",
     "yup": "^0.29.1"
   },
   "devDependencies": {
